@@ -1,0 +1,130 @@
+Skip to content
+Analyst Answers
+Analyst Answers
+Learn-by-Doing Skills in Data & Finance
+
+Students
+Professionals
+Free Resources
+Shopping Cart
+Search
+
+Dummy Data: Definition, Example & How to Generate It
+Understand Data Analysis / By Noah Glenn
+Dummy data isn’t exactly dumb — on the contrary. Analysts that use dummy data are often the smart ones in the room, since dummy data is kind a safety mechanism for data integrity. It’s a trial subject of sorts, applied to unknown programs, or program modifications, before valuable data is used.
+
+OK, that’s a high-level view, but what is dummy data really?
+
+Contents	
+Definition
+Make Sure You Know Your Dummy Data
+Examples of Dummy Data
+Testing New Programs
+Testing Modifications on Existing Programs
+How to Create Dummy Data in Excel – 10 Steps
+What is dummy data in a database?
+Why do analysts use dummy data?
+Definition
+Dummy data is mock data generated at random as a substitute for live data in testing environments. In other words, dummy data acts as a placeholder for live data, the latter of which testers only introduce once it’s determined that the trail program does not have any unintended, negative impact on the underlying data.
+
+For example, a company implementing a new accounting system uses dummy data to ensure its bookings are stored correctly before inputting live accounts.
+
+You can think of dummy data like a car crash dummy — you hope nothing bad happens to it while testing, but if something bad does happen, you can fix the problem with no negative impact on your valuable data assets.
+
+Make Sure You Know Your Dummy Data
+A classic slip-up for new analysts is not knowing dummy data from real data, which be confusing (and embarrassing) when you’re working fast on a project with others. That’s because in some cases dummy data can “look” real, so make sure to ensure everyone involved is aware when dummy data is active.
+
+Don’t forget, you can access the 67 data skill and concepts checklist for free to ensure you’ve got your bases covered.
+
+Examples of Dummy Data
+Analysts use dummy data in two primary contexts (we’ll look at a third later): testing new programs and testing modifications on existing program. Let’s look at an example of each below.
+
+Testing New Programs
+Imagine you own a big e-commerce website that sells watches in bulk. Your company is called Batch Watch — it’s your baby. One of the biggest assets the company has is the data it collects on vendors, its products, and customers.
+
+When you started the company, you didn’t have much cash to spend on an expensive database program, so you took the first inexpensive option that came your way. Unfortunately, this means your data is not well-modeled, and you’re not really sure how that initial data program’s technical skeleton is structured.
+
+After years of growth, you’ve now got cash to invest and want to implement a high quality database management system. However, you want to ensure the transfer is smooth and requires minimal downtime. You hire an IT consultant to execute the transfer.
+
+The IT consultant analyzes your data and its structure, and she decides on a new program that’s most efficient to store your data. The project outlines is as follows:
+
+Create a conceptual data model for the existing business structure
+Align this structure with the underlying data in a logical data model
+Link the logical data model to the new Database Management System (DBMS)
+Use dummy data to test the database structure in the DBMS
+Fix bugs
+Go live with real data in the DBMS
+The key point to note here is that the data in the current database is structured in a special way. It’s the structure that must be tested, not the data itself. In fact, this dynamic is what allows us to use dummy data in the first place. It’s like taking a practice exam before the real one — it doesn’t count for anything, but it prepares you for the live event.
+
+Testing Modifications on Existing Programs
+Now imagine yourself 5 years after implementation of the Batch Watch DBMS. Although it worked impeccably for years, the DBMS is starting to cause trouble for your data analysts. With the advent of new online data tracking technology, your DBMS has become slightly outdated.
+
+But don’t worry. You don’t need a new system — a few program modifications should do the trick, say your data analysts. You let out a sigh of relief.
+
+While program modifications are less cumbersome than system replacements, they still require that operations shut down for a small amount of time to allow for implementation of the modification. And before you implement, you need to test the modification with dummy data.
+
+For most program modifications, the process looks like the following:
+
+Set up a test environment in the DBMS
+Implement the modification in the test environment
+Use the copied live data as dummy data
+Activate the modification in test
+Fix bugs
+Go live with the program modification on live data
+The key point to note here is that program modifications are faster, simpler, and less expensive than system replacement — but the nature of the dummy data used is the same. In many cases, dummy data is nothing more than inactive real data that’s copied from the live system.
+
+That said, data analysts also use dummy data generated at random, or generated dummy data. Generated dummy data is most common in projects where:
+
+no real data exists because the system is new, or
+2. copying live data for testing purposes is not possible for technical reasons.
+In these cases, analysts create dummy data themselves. Let’s look at an example of how to do just that in Excel.
+
+How to Create Dummy Data in Excel – 10 Steps
+Generating dummy data is easy. Data analysts use online resources and generation techniques in programs like Microsoft Excel quickly build dummy data sets.
+
+Let’s look at how to generate a test set in 10 steps:
+
+Identify observation IDs for the data set. Observation IDs are unique identifiers for each line of the data table. In the case of products, observation IDs could be product names or a numeric substitute. You need to identify the observations on which the table will be based. For example, you might use “PN1, PN2, PN3… PN10” as observation IDs for products.
+Identify dimensions for the data set. Dimension (or field) is another word for characteristic or trait. They’re a piece of information about the observation ID. You need to identify what information you will include about each product, and include them as headers in your data table. For example, you might use “Product Category, Product Price, Product Weight, Product Brand” as dimensions.
+Fill in observation ID titles. Once you know them, fill in the observation IDs. To do this, choose cell A1 in an Excel sheet and write “Product ID.” In cell A2, write “PN1.” In cell A3, write “PN2.” Then highlight those two cells and drag the arrow in the bottom right corner down 8 cells. Excel will automatically create a sequence of ten PNs. Look at this short clip to understand:
+Fill in dimension titles. Once you know them, fill in dimension titles. To do so, in cell B1, write “Product Category.” Continue in each column until all dimensions are present. In our example, it should look like this picture:
+
+Example Dummy Data IDs and Dimensions
+Use rand() and randombetween() Excel formulas to fill in numeric dimensions with dummy data. This part is a little tricky.
+The randombetween() function output is a random number between two parameters that you provide. In our case, let’s use it for Product Category. Imagine we only have 3 product categories. In this case, we use randombetween(1,3). Put this into cell B2, then slide the autofill cross in the bottom right of that cell down to cell B11 to match the number of Product ID (pro tip: you can double click it to automatically match the number of cells in an adjacent column).
+The rand() function output is a number between 0 and 1, which means you can multiply it by a constant to get a percent of that constant. Let’s use it for Product Price and Product Weight. In cell C2, type =rand()*50 and press enter. You will see a random percent of 50. Use the autofill cross in the bottom right to fill out the following rows. You now have random prices for your products. Move to Product Weight (kg), and in cell D2 enter =rand(). Since our products are watches, it makes sense that they weigh less one kilogram. No need to multiply by a constant here. Use the autofill function to complete the column. Your table should now look like a variant of this picture (red font added for emphasis):
+
+Example Dummy Data Seet
+Fix troublesome data. If you have any data that doesn’t seem to makes sense, examine that cell more carefully. In our case, the table is simple enough that there are no troublesome data.
+Copy the data set and re-paste it using Excel’s “paste values” function. Now that you have a complete data set, you’ll want to get rid of the formulas behind the cells. When you’re working with dummy data, it’s better to have hard numbers rather than formulas because various software treat formulas differently. To do so, highlight the entire table with your cursor. Copy it by pressing Cntrl + C (command + C on Mac). Navigate to Home>Paste Special>Paste Values. Here’s a short video to show you:
+Example Paste Values in Excel – Short Video
+And you’re done! This is a functioning dummy data set that you can use to test new systems and modifications on existing systems.
+
+What is dummy data in a database?
+In this article we’ve talked about dummy data sets, which are useful for testing new systems and modifications on existing systems. However, we haven’t talked about individual dummy data points. This is actually the most common use for dummy data, and it’s most common in databases.
+
+In a sentence, dummy data in a database consists of individual data points used to fill gaps in live data.
+
+Most people’s first reaction to this is doubt. Doesn’t dummy data used next to real data nullify the real data’s integrity? The short answer is yes, it does. To mitigate the impact on data integrity, analysts use 1 of 2 techniques to establish dummy data points: 1. closest copy, or 2. moving average.
+
+Closest copy. The closest copy technique implies taking the closest similar live data point and copying it into the empty point as dummy data. For example, imagine you have a marketing cost for January – March and for May – December. The only point you’re missing is April. The closest copy technique would suggest you take the for either March or May and copy it into the April point.
+Moving average. A forecasting technique for time series data, moving averages use an average of relevant preceding data to calculate dummy data. For example, to predict rainfall in April, you would take the average of rainfall from January to March. It’s simple, yet highly effective.
+Why do analysts use dummy data?
+We’ve now seen some examples of dummy data, how to make a dummy data set, and techniques for creating individual dummy data sets. To answer “why” analysts use dummy data, we need to reference these three cases.
+
+As a summary, analysts use dummy data:
+
+Analysts use dummy data to test new systems,
+Analysts use dummy data to test modifications on existing systems, and
+Analysts use dummy data to fill in gaps that exist in real, live data sets.
+Post navigation
+← Previous Post
+Next Post →
+
+Intro to Data Analysis
+
+GET FREE HERE
+Google Data Analytics Certificate
+GET IT HERE
+Copyright © 2022 Analyst Answers | Some of the links on this site may be affiliate links, which can provide compensation to me at no cost to you if you decide to purchase through them.
+Home PageAbout
