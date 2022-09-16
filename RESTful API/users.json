@@ -1,0 +1,22 @@
+{
+    "user1" : {
+       "name" : "Usama",
+       "password" : "123",
+       "profession" : "MERN Developer",
+       "id": 1
+    },
+    
+    "user2" : {
+       "name" : "Waqas",
+       "password" : "456",
+       "profession" : "MEAN Developer",
+       "id": 2
+    },
+    
+    "user3" : {
+       "name" : "Talha",
+       "password" : "789",
+       "profession" : "MERN Developer",
+       "id": 3
+    }
+ }
